@@ -69,9 +69,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	// Register the handler function for all routes
-	http.HandleFunc("/", handler)
+	http.HandleFunc("/hodr/", handler)
 	// Register Prometheus endpoint
-	http.Handle("/metrics", promhttp.Handler())
+	http.Handle("/hodr/metrics", promhttp.Handler())
 
 	addr := os.Getenv("HOST_ADDR")
 	if addr == "" {
